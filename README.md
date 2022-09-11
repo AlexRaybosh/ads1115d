@@ -1,4 +1,4 @@
-# ads1115d daemon. 
+#  ADS1115 ads1115d daemon.  Probably will work for other ADCs ADS111* or should be easily tunable
 No need for funcky libraries to do ADC.
 
 ## Features
