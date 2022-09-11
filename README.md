@@ -63,6 +63,9 @@ root@r2b:/home/pi# systemctl status ads1115
 Sep 11 16:01:32 r2b systemd[1]: Started ads1115d.
 ```
 
-
+```
+pi@r2b:~ $ cat  /run/ads1115/AIN1.txt 
+0001.779pi@r2b:~ $ 
+```
 
 
