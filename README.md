@@ -3,26 +3,30 @@ No need for funcky libraries to do ADC. Just read a text or binary file, e.g. /r
 
 ## Features
 - Microseconds resolution timer
-- No insane busy loops
+- No insane busy loops. Sleep times between ADC request and ADC fetch are calculated based on rate. Add more sleep, after reading, if needed.
 - Maintains either text or binary files for configure pins. Can be easily used from any other language (as long as you can read a file there)
+
+
 
 ## Setup
 Add systemctl service. 
 Precompled armhf binary https://github.com/AlexRaybosh/ads1115d/tree/master/build/armhf
 Crosscompiled & Linked statically - https://github.com/AlexRaybosh/ads1115d/blob/master/src/arch.mk#L42
 
-On first run a default configuration file /etc/ads1115d.json will bre created (see https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json)
+On first run a default configuration file /etc/ads1115d.json will be created 
+(see https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json)
 
 
-Tune it, e.g. enable pin https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json#L25 .
+Tune it, e.g. enable/disable pin https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json#L25 
+Add more pins.
 Then restart the service
 
 ## Notes
-- Fastest way is to use mmap writeMethod, On raaspberry pi 2, the cost is about ~ 10 microseconds (Cost of formatting ~ 40 microseconds)
-- "write" method cost is about 80-90 microseconds
-- "rename" method cost is about 150 microseconds
+- Fastest way is to use mmap writeMethod, On raspberry pi 2, the cost is about ~ 6-8 microseconds (Cost of text formatting ~ 40 microseconds)
+- "write" method cost is about 80-90 microseconds (including text formatting)
+- "rename" method cost is about 150 microseconds (including text formatting)
 
-All above, given tempfs location
+All the above, given tempfs output file location (e.g. /run on raspberian )
 
 
 
