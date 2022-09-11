@@ -1,10 +1,10 @@
 #  ADS1115 ads1115d daemon.  Probably will work for other ADCs ADS111* or should be easily tunable
-No need for funcky libraries to do ADC.
+No need for funcky libraries to do ADC. Just read a text or binary file, e.g. /run/ads1115/AIN1.txt
 
 ## Features
 - Microseconds resolution timer
 - No insane busy loops
-- Maintains either text or binary files for configure pins. Can be easily used from any other language
+- Maintains either text or binary files for configure pins. Can be easily used from any other language (as long as you can read a file there)
 
 ## Setup
 Add systemctl service. 
