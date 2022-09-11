@@ -1,4 +1,4 @@
-#  ADS1115 ads1115d daemon.  Probably will work for other ADCs ADS111* or should be easily tunable
+#  ADS1115 ads1115d daemon.  Probably will work for other ADCs ADS11xx or should be easily tunable
 No need for funcky libraries to do ADC. Just read a text or binary file, e.g. /run/ads1115/AIN1.txt
 
 ## Features
