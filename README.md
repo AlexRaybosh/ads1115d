@@ -50,7 +50,7 @@ systemctl restart ads1115.service
 - check status
 systemctl status ads1115
 
-[code]
+```
 root@r2b:/home/pi# systemctl status ads1115
 ● ads1115.service - ads1115d
    Loaded: loaded (/etc/systemd/system/ads1115.service; enabled; vendor preset: enabled)
@@ -61,6 +61,7 @@ root@r2b:/home/pi# systemctl status ads1115
            └─30370 /usr/bin/ads1115d
 
 Sep 11 16:01:32 r2b systemd[1]: Started ads1115d.
+```
 
 
 
