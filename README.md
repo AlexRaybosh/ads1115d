@@ -35,3 +35,33 @@ All the above, given tempfs output file location (e.g. /run on raspberian )
 - Did't put any specific arch flags. Should work on Pi 2+
 - armel is commented out
 - To cross build, need to get /usr/bin/arm-linux-gnueabihf* stuff, and qemu-arm
+
+## systemctl
+- Example https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.service
+- Copy ads1115.service to /etc/systemd/system/
+- Copy ads1115d from https://github.com/AlexRaybosh/ads1115d/tree/master/build/armhf to /usr/bin
+- enable with
+systemctl enable ads1115.service
+- start with 
+systemctl start ads1115.service
+- edit /etc/ads1115d.json
+- restart 
+systemctl restart ads1115.service
+- check status
+systemctl status ads1115
+
+[code]
+root@r2b:/home/pi# systemctl status ads1115
+● ads1115.service - ads1115d
+   Loaded: loaded (/etc/systemd/system/ads1115.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-09-11 16:01:32 CDT; 1s ago
+ Main PID: 30370 (ads1115d)
+    Tasks: 1 (limit: 2164)
+   CGroup: /system.slice/ads1115.service
+           └─30370 /usr/bin/ads1115d
+
+Sep 11 16:01:32 r2b systemd[1]: Started ads1115d.
+
+
+
+
