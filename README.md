@@ -9,6 +9,8 @@ No need for funcky libraries to do ADC.
 ## Setup
 Add systemctl service. 
 Precompled armhf binary https://github.com/AlexRaybosh/ads1115d/tree/master/build/armhf
+Crosscompiled & Linked statically - https://github.com/AlexRaybosh/ads1115d/blob/master/src/arch.mk#L42
+
 On first run a default configuration file /etc/ads1115d.json will bre created (see https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json)
 
 
@@ -24,3 +26,7 @@ All above, given tempfs location
 
 
 
+## More notes
+- Did't put any specific arch flags. Should work on Pi 2+
+- armel is commented out
+- To cross build, need to get /usr/bin/arm-linux-gnueabihf* stuff, and qemu-arm
