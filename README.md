@@ -12,7 +12,7 @@ Add more sleep, after reading, if needed (https://github.com/AlexRaybosh/ads1115
 ## Setup
 Add systemctl service. 
 Precompled armhf binary https://github.com/AlexRaybosh/ads1115d/tree/master/build/armhf
-Crosscompiled & Linked statically - https://github.com/AlexRaybosh/ads1115d/blob/master/src/arch.mk#L42
+Crosscompiled & Linked with static libgcc and libstdc++ - https://github.com/AlexRaybosh/ads1115d/blob/master/src/arch.mk#L42
 
 On first run a default configuration file /etc/ads1115d.json will be created 
 (see https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json)
