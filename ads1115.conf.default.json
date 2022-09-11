@@ -1,0 +1,79 @@
+{
+	"description" : "Configuration for the ads1115d service. Enable ads1115d service with systemctl",
+	"work" : {
+		"pins" : [
+				{
+					"pin" : "AIN0",
+					"enabled" : false,
+					"gain" : "4.096v",
+					"rate" : "rate-250",
+					"count" : 3,
+					"coefficient" : 1.0,
+					"offset" : 0.0,
+					"description" : "voltage is calculated as: (ref. voltage * coefficient) + offset; measuments will be taken 'count' times, then averaged out.",
+					"writeFile" : "/run/ads1115/AIN0.txt",
+					"writeMethodDescription" : "One of: rename, mmap, write. rename - create new file and rename to the specified; mmap - mmap, write - write on top",
+					"writeMethod" : "rename",
+					"writeFormatDescription" : "One of: text, native. native - 8 bytes double",
+					"writeFormat" : "text",
+					"timeoutMicroseconds" : 1000000,
+					"retryMicroseconds" : 300000
+										
+				},
+				{
+					"pin" : "AIN1",
+					"enabled" : true,
+					"gain" : "2.048v",
+					"rate" : "rate-250",
+					"count" : 10,
+					"coefficient" : 1.0,
+					"offset" : 0.0,
+					"writeFile" : "/run/ads1115/AIN1.txt",
+					"writeMethod" : "mmap",
+					"writeFormat" : "text",
+					"timeoutMicroseconds" : 1000000,
+					"retryMicroseconds" : 300000
+				}
+		],
+		"delayMicroseconds" :1000
+	},
+	"board" : {
+		"name" : "ADS1115",
+		"i2c" : {
+			"address" : "0x48",
+			"device" : "/dev/i2c-1",
+			"force" : true
+		},
+		"rates" : {
+			"rate-8" :{"id" : 0,"frequency" : 8},
+			"rate-16" :{"id" : 1,"frequency" : 16},
+			"rate-32" :{"id" : 2,"frequency" : 32 },
+			"rate-64" :{"id" : 3,"frequency" : 64},
+			"rate-128" :{"id" : 4,"frequency" : 128},
+			"rate-250" :{"id" : 5,"frequency" : 250},
+			"rate-475" :{"id" : 6,"frequency" : 475},
+			"rate-860" :{"id" : 7,"frequency" : 860}
+		},
+		"registers" : {
+			"conversion" : 0,
+			"config" : 1,
+			"lo_thresh" : 2,
+			"high_thresh" : 3
+		},
+		"pins" : {
+			"AIN0" : {"id" : 4},
+			"AIN1" : {"id" : 5},
+			"AIN2" : {"id" : 6},
+			"AIN3" : {"id" : 7}
+		},
+		"gains" : {
+			"6.144v" : {"id" : 0,"voltage" : 6.144},
+			"4.096v" : {"id" : 1,"voltage" : 4.096},
+			"2.048v" : {"id" : 2,"voltage" : 2.048},
+			"1.024v" : {"id" : 3,"voltage" : 1.024},
+			"0.512v" : {"id" : 4,"voltage" : 0.512},
+			"0.256v" : {"id" : 5,"voltage" : 0.256
+			}
+		}
+	}
+}
