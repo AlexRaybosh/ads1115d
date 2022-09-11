@@ -1,0 +1,12 @@
+[Unit]
+Description=ads1115d
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+ExecStart=/usr/bin/ads1115d
+
+[Install]
+WantedBy=multi-user.target
