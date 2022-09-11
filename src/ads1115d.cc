@@ -30,7 +30,7 @@ int main(int argc, char ** argv) {
 	} else {
 		conf=json::parse(utils::slurpTextFile(confFileName));
 	}
-	std::cout<<json::pretty(conf)<<std::endl;
+	//std::cout<<json::pretty(conf)<<std::endl;
 
 	Board board;
 	try {
