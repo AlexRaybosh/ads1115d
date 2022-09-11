@@ -5,7 +5,7 @@ No need for funcky libraries to do ADC. Just read a text or binary file, e.g. /r
 - Microseconds resolution timer
 - No insane busy loops. Sleep times between ADC request and ADC fetch are calculated based on rate frequences (https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json#L47). 
 Add more sleep, after reading, if needed (https://github.com/AlexRaybosh/ads1115d/blob/master/ads1115.conf.default.json#L38).
-- Maintains either text or binary files for configure pins. Can be easily used from any other language (as long as you can read a file there)
+- Maintains either text or binary files for configured pins. Can be easily used from any other language (as long as you can read a file there)
 
 
 
