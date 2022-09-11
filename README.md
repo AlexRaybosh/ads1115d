@@ -1,7 +1,7 @@
 # ads1115d daemon. 
 No need for funcky libraries to do ADC.
 
-##Features
+## Features
 - Microseconds resolution timer
 - No insane busy loops
 - Maintains either text or binary files for configure pins
